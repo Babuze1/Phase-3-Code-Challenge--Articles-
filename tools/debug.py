@@ -1,32 +1,42 @@
-from lib.Author import Author
-from lib.Magazine import Magazine
+from classes.Author import Author
+from classes.Magazine import Magazine
+from classes.Article import Article
 
 def main():
     # Create authors
     author1 = Author("Author 1")
     author2 = Author("Author 2")
+    author3 = Author("Author 3")
 
     # Create magazines
     magazine1 = Magazine("Magazine A", "Category A")
     magazine2 = Magazine("Magazine B", "Category B")
+    magazine3 = Magazine("Magazine C", "Category A")
 
-    # Add articles
-    author1.add_article(magazine1, "Article 1 by Author 1")
-    author1.add_article(magazine2, "Article 2 by Author 1")
-    author2.add_article(magazine1, "Article 1 by Author 2")
+    # Create articles
+    article1 = Article(author1, magazine1, "Article Title 1")
+    article2 = Article(author1, magazine2, "Article Title 2")
+    article3 = Article(author2, magazine1, "Article Title 3")
+    article4 = Article(author3, magazine3, "Article Title 4")
 
-    # Print author information
-    print("Author 1:")
-    print("Name:", author1.name())
-    print("Articles:", [article.title() for article in author1.articles()])
-    print("Magazines:", [magazine.name() for magazine in author1.magazines()])
-    print("Topic Areas:", author1.topic_areas())
+    # Test methods
+    print("Authors:")
+    print(Author.all())
+    print(author1.articles())
+    print(author1.magazines())
+    print(author1.topic_areas())
 
-    # Print magazine information
-    print("\nMagazine A:")
-    print("Name:", magazine1.name())
-    print("Category:", magazine1.category())
-    print("Contributors:", [contributor.name() for contributor in magazine1.contributors()])
+    print("\nMagazines:")
+    print(Magazine.all())
+    print(magazine1.contributors())
+    print(magazine1.article_titles())
+    print(magazine1.contributing_authors())
+
+    print("\nArticles:")
+    print(Article.all())
+    print(article1.title())
+    print(article1.author().name())
+    print(article1.magazine().name())
 
 if __name__ == "__main__":
     main()

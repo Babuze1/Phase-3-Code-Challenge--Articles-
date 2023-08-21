@@ -1,3 +1,5 @@
+import Article
+
 class Magazine:
     _magazines = []
 
@@ -32,14 +34,7 @@ class Magazine:
 
     @classmethod
     def article_titles(cls):
-        titles = []
-        for magazine in cls._magazines:
-            titles.extend(article.title() for article in magazine.articles())
-        return titles
+        return [article.title() for article in Article.all() if article.magazine() == cls]
 
     def contributing_authors(self):
         return [author for author in self._contributors if len(author.articles()) > 2]
-
-
-from Author import Author
-from Article import Article

@@ -1,5 +1,5 @@
-from Author import Author
-from Magazine import Magazine
+from lib.Author import Author
+from lib.Magazine import Magazine
 
 def main():
     # Create authors

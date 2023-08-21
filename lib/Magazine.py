@@ -39,7 +39,3 @@ class Magazine:
 
     def contributing_authors(self):
         return [author for author in self._contributors if len(author.articles()) > 2]
-
-
-from Author import Author
-from Article import Article

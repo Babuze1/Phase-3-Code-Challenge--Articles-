@@ -1,4 +1,3 @@
-
 class Article:
     def __init__(self, author, magazine, title):
         self._author = author
@@ -19,3 +18,6 @@ class Article:
         # Return a list of all Article instances
         pass
 
+
+from Author import Author
+from Magazine import Magazine

@@ -1,12 +1,19 @@
-from classes.Author import Author
-from classes.Magazine import Magazine
-from classes.Article import Article
+from Author import Author
+from Magazine import Magazine
+from Article import Article
+
+class Article:  # Your new Article class
+    def __init__(self, articleName):
+        self.articleName = articleName
+
+    def name(self):
+        return self.articleName
 
 def main():
     # Create authors
-    author1 = Author("Bunverserbic")
-    author2 = Author("Shantaline")
-    author3 = Author("Emmanuel")
+    author1 = Author("Author 1")
+    author2 = Author("Author 2")
+    author3 = Author("Author 3")
 
     # Create magazines
     magazine1 = Magazine("Magazine A", "Category A")
@@ -37,6 +44,7 @@ def main():
     print(article1.title())
     print(article1.author().name())
     print(article1.magazine().name())
+    print(article1.name())  
 
 if __name__ == "__main__":
     main()

@@ -20,3 +20,5 @@ class Article:
     def all(cls):
         return cls._articles
 
+    def name(self):
+        return self._title  

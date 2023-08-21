@@ -1,6 +1,6 @@
-from Author import Author
-from Magazine import Magazine
-from Article import Article
+from classes.Author import Author
+from classes.Magazine import Magazine
+from classes.Article import Article
 
 class Article:  # Your new Article class
     def __init__(self, articleName):

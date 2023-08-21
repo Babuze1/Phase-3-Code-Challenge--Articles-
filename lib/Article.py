@@ -19,4 +19,3 @@ class Article:
         # Return a list of all Article instances
         pass
 
-f

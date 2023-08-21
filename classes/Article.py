@@ -19,3 +19,4 @@ class Article:
     @classmethod
     def all(cls):
         return cls._articles
+

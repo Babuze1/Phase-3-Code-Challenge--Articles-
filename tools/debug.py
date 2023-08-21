@@ -4,9 +4,9 @@ from classes.Article import Article
 
 def main():
     # Create authors
-    author1 = Author("Author 1")
-    author2 = Author("Author 2")
-    author3 = Author("Author 3")
+    author1 = Author("Bunverserbic")
+    author2 = Author("Shantaline")
+    author3 = Author("Emmanuel")
 
     # Create magazines
     magazine1 = Magazine("Magazine A", "Category A")

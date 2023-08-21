@@ -28,7 +28,7 @@ project_folder/
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/magazine-domain-project.git
+git clone https://github.com/Babuze1/Phase-3-Code-Challenge--Articles-
 
 2. Navigate to the project folder:
 

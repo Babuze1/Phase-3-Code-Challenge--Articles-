@@ -1,4 +1,5 @@
-import Article
+from Article import Article as ArticleClass
+
 class Author:
     def __init__(self, name):
         self._name = name
@@ -17,9 +18,10 @@ class Author:
         return list(magazine_set)
 
     def add_article(self, magazine, title):
-        article = Article(self, magazine, title)
+        article = ArticleClass(self, magazine, title)  
         self._articles.append(article)
         magazine.add_contributor(self, article)
+        
 
     def topic_areas(self):
         topics = set()

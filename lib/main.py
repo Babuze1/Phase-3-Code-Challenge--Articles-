@@ -19,4 +19,5 @@ print(author1.articles()[0].title())
 print(magazine1.contributors()[0].name()) 
 print(magazine1.article_titles())  
 print(Magazine.find_by_name("Twin Turbos").category()) 
-print(magazine1.contributing_authors()[0].name())  
+print(magazine1.contributing_authors())
+

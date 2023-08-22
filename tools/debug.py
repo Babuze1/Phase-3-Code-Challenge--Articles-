@@ -25,8 +25,8 @@ def main():
     article2 = Article(author1, magazine2, "Article Title 2")
     article3 = Article(author2, magazine1, "Article Title 3")
     article4 = Article(author3, magazine3, "Article Title 4")
-
-    # Test methods
+ 
+    
     print("Authors:")
     print(Author.all())
     print(author1.articles())

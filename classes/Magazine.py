@@ -1,13 +1,12 @@
-import Article
-
 class Magazine:
-    _magazines = []
+    _all = []
 
     def __init__(self, name, category):
         self._name = name
         self._category = category
         self._contributors = []
-        Magazine._magazines.append(self)
+        self._articles = []
+        Magazine._all.append(self)
 
     def name(self):
         return self._name
@@ -15,26 +14,28 @@ class Magazine:
     def category(self):
         return self._category
 
-    @classmethod
-    def all(cls):
-        return cls._magazines
-
-    def add_contributor(self, author):
-        if author not in self._contributors:
-            self._contributors.append(author)
+    def add_contributor(self, author, article):
+        self._contributors.append(author)
+        self._articles.append(article)
 
     def contributors(self):
         return self._contributors
 
+    def article_titles(self):
+        return [article.title() for article in self._articles]
+
+    @classmethod
+    def all(cls):
+        return cls._all
+
     @classmethod
     def find_by_name(cls, name):
-        for magazine in cls._magazines:
+        for magazine in cls._all:
             if magazine.name() == name:
                 return magazine
 
-    @classmethod
-    def article_titles(cls):
-        return [article.title() for article in Article.all() if article.magazine() == cls]
-
     def contributing_authors(self):
-        return [author for author in self._contributors if len(author.articles()) > 2]
+        author_count = {}
+        for author in self._contributors:
+            author_count[author] = author_count.get(author, 0) + 1
+        return [author for author, count in author_count.items() if count > 2]

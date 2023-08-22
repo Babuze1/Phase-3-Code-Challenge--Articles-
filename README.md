@@ -8,13 +8,11 @@ The project follows the following folder structure:
 
 project_folder/
 │
-├── classes/
+├── lib/
 │ ├── Author.py
 │ ├── Article.py
 │ └── Magazine.py
-│
-├── tools/
-│ └── debug.py
+│ └── main.py
 │
 ├── Pipfile
 └── README.md

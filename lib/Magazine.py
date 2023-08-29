@@ -38,5 +38,5 @@ class Magazine:
         author_count = {}
         for author in self._contributors:
             author_count[author] = author_count.get(author, 0) + 1
-        print("Author Count:", author_count)  # Debug print
+        print("Author Count:", author_count) 
         return [author for author, count in author_count.items() if count > 2]

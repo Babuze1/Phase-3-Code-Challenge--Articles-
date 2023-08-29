@@ -1,10 +1,14 @@
-from Article import Article as ArticleClass
+from Article import Article
 
 class Author:
+    _all = []
+
     def __init__(self, name):
         self._name = name
+        self._all.append(self)
         self._articles = []
 
+    @property
     def name(self):
         return self._name
 
@@ -12,19 +16,19 @@ class Author:
         return self._articles
 
     def magazines(self):
-        magazine_set = set()
+        magazine_list = []
         for article in self._articles:
-            magazine_set.add(article.magazine())
-        return list(magazine_set)
+            if article.magazine() not in magazine_list:
+                magazine_list.append(article.magazine())
+        return magazine_list
 
     def add_article(self, magazine, title):
-        article = ArticleClass(self, magazine, title)  
-        self._articles.append(article)
-        magazine.add_contributor(self, article)
-        
+        new_article = Article(self, magazine, title)
+        self._articles.append(new_article)
+        return new_article
 
     def topic_areas(self):
-        topics = set()
-        for article in self._articles:
-            topics.add(article.magazine().category())
-        return list(topics)
+        categories = set()
+        for magazine in self.magazines():
+            categories.add(magazine.category())
+        return list(categories)

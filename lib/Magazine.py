@@ -38,13 +38,3 @@ class Magazine:
             titles.append(article.title())
         return titles
 
-    def contributing_authors(self):
-        authors = {}
-        for article in self._articles:
-            author = article.author()
-            if author in authors:
-                authors[author] += 1
-            else:
-                authors[author] = 1
-        contributing_authors = [author for author, count in authors.items() if count > 2]
-        return contributing_authors

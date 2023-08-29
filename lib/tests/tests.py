@@ -1,6 +1,9 @@
+import sys
+sys.path.append("..")  # Add parent directory to sys.path for absolute imports
+
 from Author import Author
 from Magazine import Magazine
-
+from Article import Article
 
 def test_author_methods():
     author1 = Author("John Doe")
@@ -19,7 +22,6 @@ def test_article_methods():
     assert article1.title() == "Python Programming"
     assert article1.author() == author1
     assert article1.magazine() == magazine1
-
 
 if __name__ == "__main__":
     test_author_methods()
